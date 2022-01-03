@@ -15,45 +15,42 @@
     </head>
     <body>
         <div id="app">
-            <div class="aboutMe">
-                <div class="aboutMe-content">
-                  <div class="aboutMe-title">
+            <div class="p-6 m-auto rounded-lg bg-white-900 shadow-lg max-w-3xl place-content-center">
+                <div class="m-6 pt-1">
+                  <div class="font-serif text-slate-900 font-black text-4xl">
                     <h1> {{ greetingMessage }} </h1>
                     </div>
                     
                     <div>
-                        <span class="aboutMe-message"> {{ messages }}</span>
+                        <span class="font-serif text-slate-400 text-base"> {{ messages }}</span>
                     </div>
 
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto doloribus libero earum, error voluptates at fugiat tenetur? Omnis, assumenda? A, maiores. Itaque similique neque quos ducimus? Vero nam possimus asperiores?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae iusto adipisci similique perferendis fugiat ut, laudantium assumenda ea! Culpa, necessitatibus. Totam corporis omnis minima necessitatibus et unde, dicta voluptatum inventore?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla molestiae amet vitae! Quisquam quis ipsam odio eveniet, dolore exercitationem eius illum magni quasi, sed consequuntur inventore quos itaque illo odit.
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit totam maiores hic laborum reprehenderit quia quod id obcaecati incidunt inventore. Aliquid ex cum ut pariatur quaerat obcaecati ratione accusantium eos.
+                    <p class="font-serif">
+                        {{ description }}
                     </p>
 
                     <div>{{ alert }}</div>
-                    
-
                     <button v-on:click="alert=submitted">Submit</button>
-
-                   
-
-                    <div w-8.5>
-                        <button v-on:click="hidden()" class="w-7.5 rounded-md border-2 border-orange-100 px-3.5 py-1 bg-orange-100">Hide</button>
+                    <div>
+                        <button v-on:click="hidden()" class="rounded-md border-2 border-orange-100 px-3.5 py-1 bg-orange-100">Hide</button>
                     </div>
-
                     <div v-if="seen">Hi</div>
-                    
                 </div>
-                
             </div>
-            
-            
-            
-            
+        </div>
 
-            
-
+        <div id="app2">
+            <div class="p-6 m-auto rounded-lg bg-white-900 shadow-lg max-w-3xl place-content-center">
+                <div class="m-6 pt-1">
+                  <div class="font-serif text-slate-900 font-black text-4xl">
+                    <div>{{ alert }}</div>
+                    <button v-on:click="alert=submitted">Submit</button>
+                    <div>
+                        <button v-on:click="hide()" class="rounded-md border-2 border-orange-100 px-3.5 py-1 bg-orange-100">Hide</button>
+                    </div>
+                    <div v-if="hidden">Hi</div>
+                </div>
+            </div>
         </div>
 
         
@@ -65,28 +62,13 @@
         <script>
             const mountedApp = app.mount("#app")
         </script>
+
+        <script>
+            const mountedApp2 = app2.mount("#app2")
+        </script>
     </body>
 
     <style>
-        .aboutMe {
-            max-width: 50rem;
-            margin: 0 auto;
-            padding: 1.5rem;
-            border-radius: 0.5rem;
-            background-color: #fff;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .aboutMe-content {
-            margin-left: 1.5rem;
-            padding-top: 0.25rem;
-        }
-        .aboutMe-title {
-            color: #1a202c;
-            font-size: 2rem;
-            font-weight: bold;
-            line-height: 1.25;
-        }
         .aboutMe-message {
             color: #718096;
             font-size: 1rem;
